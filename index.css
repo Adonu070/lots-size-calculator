@@ -59,6 +59,7 @@ display: flex;
 align-items: center;
 width: 100%;
 gap: 0.3rem;
+font-weight: 600;
 }
 
 
@@ -88,6 +89,12 @@ font-size: 0.8rem;
   gap: 1rem;
 }
 
+.trade-image{
+  width: 4rem;
+  height: 4rem;
+  
+}
+
 .right-text{
   display: flex;
   flex-direction: column;
@@ -106,8 +113,19 @@ align-self: flex-end;
 
 /* main feature */
 
-.icons,.fi-us{
+.icons{
   width: 1rem;
+}
+
+
+.fi{
+  border-radius: 50%;
+  margin-right: 0.2rem;
+}
+li{
+  background-color: var(--bg-card);
+  padding: 0.2rem;
+ margin-bottom: 0.5rem;
 }
 
 .counts-image{
@@ -124,6 +142,7 @@ align-self: flex-start;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
   /* background-color: var(--primary); */
 }
 .market-selection{
@@ -151,6 +170,13 @@ ul{
   gap: 1rem;
   border:1px solid var(--border);
   padding: 1rem;
+  max-height: 20rem;
+  overflow: scroll;
+  scrollbar-width: none;
+  position: fixed;
+
+  left: 50%;
+  transform: translate(50%,-50%);
 }
 
 li{
@@ -194,7 +220,7 @@ gap: 0.3rem;
   display: flex;
   align-items: center;
   background-color: var(--bg-input);
-width: 100%;
+width:100% ;
 height: 2rem;
 justify-content: space-between;
 border-radius: 1rem;
@@ -385,6 +411,45 @@ gap: 1rem;
   display: none;
 }
 
+.topmeanu{
+  display: none;
+}
+
+ul{
+position: fixed;
+left: 50%;
+transform: translate(-50%);
+top: 10%;
+z-index: 1;
+}
+
+.green{
+  background-color: #00E69A;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin: -0.5rem;
+  
+}
+
+.disable-confirmation{
+  display: none;
+}
+
+.blur{
+  position: fixed;
+ top: 1%;
+ width: 100%;
+ height: 100%;
+  backdrop-filter: blur(5px);
+  display: none;
+}
+
+/* .currency-piars{
+ font-weight: 600; */
+ /* margin-bottom: 2rem; */
+ /* position: fixed;
+ top: 0%; */
+/* } */
 
 /* Responsive desing */
 
@@ -406,7 +471,7 @@ font-size:80%;
   flex-direction: column;
   border: 0;
   align-items: center;
-  
+  /* width:90% ; */
 }
 
 .market-selection{
@@ -415,6 +480,18 @@ font-size:80%;
  
 }
 
+
+
+
+.trade-image{
+  width: 100%;
+
+  
+}
+
+.topmeanu{
+  display: inline;
+}
 /* .risk-details{
   display: flex;
   justify-content: space-between;
@@ -453,8 +530,15 @@ header{
 }
 
 .inputs{
-  width: 100%;
+  width: auto;
 }
+
+ul{
+ 
+  width: 90%;
+
+}
+
 
 
 .foooter-desc{
@@ -476,11 +560,19 @@ header{
 .calculate-btn{
   display: flex;
   /* align-self: center; */
-  justify-content: center;
+  
   align-content: center;
  
 }
 
+
+.market-rap{
+  width: auto;
+}
+
+header{
+  width: auto;
+}
 /* footer{
   display: flex;
   flex-direction: column;
@@ -488,10 +580,10 @@ header{
 
 nav{
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
   position: fixed;
   bottom: 0;
- 
+
  width: 100%;
   background-color: var(--bg-main-color);
   height: 3rem;
@@ -511,12 +603,47 @@ nav{
   width: 1.5rem;
 }
 
+.heade-text{
+  display: flex;
+  align-items:center;
+  font-size: 1.5rem;
+}
 
 
-
-
-
+.head-text-rap{
+  align-self: flex-start;
+}
 
 
 }
+
+
+
 /* with 200-400px */
+
+@media(max-width:18.7rem){
+  html{
+    font-size: 35%;
+  }
+
+  .heade-text{
+    display: flex;
+    flex-direction: column;
+
+   
+    align-content: center;
+    
+  }
+
+  .top-head{
+   display: flex;
+ align-self: flex-start;
+ margin-top: 1rem;
+  }
+.trade-image{
+  width:auto;
+  
+  
+}
+
+}

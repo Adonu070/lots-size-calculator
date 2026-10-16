@@ -17,9 +17,15 @@
 
   <header>
 <div class="head-text-and-image">
-    <img class="top-logo" src="logo/STOCK.svg" alt="logo">
+  <div class="top-head">
+        <img class="top-logo trade-image" src="logo/STOCK.svg" alt="logo">
+
+  </div>
+
 <div class="head-text-rap">
-<span class="heade-text">Trading <span class="lots-size-text"> Lots Size </span>  Calculator </span>
+
+<span class="heade-text">Trading <span class="lots-size-text">Lots Size </span>  Calculator </span>
+
   <p class="header-description">Calculate the right lost size base on your risk level and accuont balance</p>
 </div>
 </div>
@@ -29,7 +35,11 @@
   <span>TRADE SMART</span>
 <span class="risk-less">RISK LESS</span>
 </div>
-<img class="top-logo" src="icons/menu-svgrepo-com (4).svg" alt="">
+
+<div class="top-head topmeanu">
+  <img class="top-logo " src="icons/menu-svgrepo-com (4).svg" alt="">
+
+</div>
   </header>
 
 
@@ -41,17 +51,19 @@
 
 <div class="market-selection">
 
-
+<div class="disable-confirmation">
+  <p class="thefx"></p><p class="thedity"></p> <p class="thepto"></p>
+</div>
 
 <div class="market-rap">
 
-  <span class="market"> <span class="fi fi-us"></span> FX(Forex )</span>
+  <div class="market fx"><span class="fi fi-us"></span><span class="market-leection">FX(Forex)</span></div>
 
-<span class="market"> 
-  <img class="icons" src="icons/strend.svg" alt=""> Indices & Comodity
-</span>
+<div class="market inds"> 
+  <img class="icons" src="icons/strend.svg" alt=""> <span class="market-leection">Indices & Comodity</span> 
+</div>
 
-<span class="market"> <img class="icons" src="icons/CRYPTO.svg" alt="">Crypto</span>
+<div class="market cryp"> <img class="icons" src="icons/CRYPTO.svg" alt=""> <span class="market-leection" >Crypto</span></div>
 
 
 
@@ -64,21 +76,10 @@
 <!-- forex -->
 
 
-<!-- forex end-->
 
 
 
 
-
-<!-- indices -->
-
-
-<!-- indices end-->
-
-
-
-
-<!-- comodity-->
 <div class="mainfeature">
 
 
@@ -86,24 +87,111 @@
 
 
 <div>
-    <label for=" Currncy pair">Pair</label>
+    <label for=" Currncy pair" class="pairs"></label>
 <div class="inputs">
-   <button type="button" class="btn" id="select-comodity-btn">
+   <button type="button" class="btn" id="select-pair">
 
-    <span class="currency">select currency</span> <img class="btn-image" src="icons/chevron-down-outline (1).svg" alt="">
+    <span class="currency"></span> <img class="btn-image" src="icons/chevron-down-outline (1).svg" alt="">
   
   </button>
 </div>
  
-<div class="ul-page" id="ul-page">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div>
+  <label for=""> Account balance (USD)</label>
+<div class="inputs">$
+<input type="number" name="" id="balance">
+<span>USD</span>
+</div>
+</div>
+
+
+<div>
+  <label for="">Risk %</label>
+<div class="inputs">%
+  <input type="number" id="Risk">
+  <span>%</span>
+</div>
+</div>
+
+<div>
+  <label for="">pips in risk (Stop loss)</label>
+<div class="inputs">
+  <img class="icons" src="icons/add-circle-outline.svg" alt="">
+  <input type="number" id="pips">
+  <span>pips</span>
+</div>
+</div>
+
+
+
+
+
+
+
+<button class="calculate-btn"> 
+  <img class="icons" src="icons/calculator-outline.svg" alt=""> Calculate
+</button>
+
+
+
+</div>
+
+</div>
+
+
+
+<div class="blur">
+<ul  class="ul-page" id="forex">
+  <!-- major pairs -->
+   <!-- <li class="currency-piars">Currency piars</li> -->
+   
+   
+<li class="list"><span class="fi fi-gb"></span><span class="fi fi-us"></span>GBPUSD</li>
+<li class="list"><span class="fi fi-eu"></span><span class="fi fi-us"></span>EURUSD</li>
+<li class="list"><span class="fi fi-au"></span><span class="fi fi-us"></span>AUDUSD</li>
+<li class="list"><span class="fi fi-nz"></span><span class="fi fi-us"></span>NZDUSD</li>
+<li class="list"><span class="fi fi-us"></span><span class="fi fi-jp"></span>USDJPY</li>
+<li class="list"><span class="fi fi-us"></span><span class="fi fi-ch"></span>USDCHF</li>
+<li class="list"><span class="fi fi-us"></span><span class="fi fi-ca"></span>USDCAD</li>
+<!-- major pairs end -->
+
+<!-- minor pairs -->
+ <li class="list"><span class="fi fi-ca"></span><span class="fi fi-jp"></span>CADJPY</li>
+ <li class="list"><span class="fi fi-gb"></span><span class="fi fi-au"></span>GBPAUD</li>
+ <li class="list"><span class="fi fi-gb"></span><span class="fi fi-ca"></span>GBPCAD</li>
+ <li class="list"><span class="fi fi-au"></span><span class="fi fi-jp"></span>AUDJPY</li>
+ <li class="list"><span class="fi fi-gb"></span><span class="fi fi-nz"></span>GBPNZD</li>
+ <li class="list"><span class="fi fi-au"></span><span class="fi fi-ca"></span>AUDCAD</li>
+<!-- minor pairs end -->
+</ul>
+
+<!-- forex end-->
+
+<!-- comodity-->
+
+<div class="ul-page" id="indices">
 
   <ul >
-    <li class="list"> <img class="icons" src="icons/CRYPTO.svg" alt="">XAUUSD</li>
+    <li class="list"> <img class="icons" src="icons/gold-ingots-gold-svgrepo-com.svg" alt="">XAUUSD</li>
     <li class="list"> <img  class="icons" src="icons/hourglass-outline.svg" alt="">USIOL</li>
-   
+   <li class="list"><span class="fi fi-us"></span>Nass100</li>
+   <li class="list"><span class="fi fi-jp"></span>JP225</li>
   </ul>
 </div>
-</div>
+
 
 
 
@@ -114,52 +202,28 @@
 
 
 
+
+
+
+
+
 <!-- crypto -->
 
-
+<ul class="ul-page" id="crypto">
+  <li class="list"><img class="icons" src="icons/CRYPTO.svg" alt="">BTC</li>
+  <li class="list"><img class="icons" src="icons/eth-svgrepo-com.svg" alt="">ETH</li>
+</ul>
 <!-- crypto end-->
 
 
-<div>
-  <label for=""> Account balance (USD)</label>
-<div class="inputs">$
-<input type="number" name="" id="">
-<span>USD</span>
-</div>
+<!-- indices -->
+
+
+<!-- indices end-->
 </div>
 
 
-<div>
-  <label for="">Risk %</label>
-<div class="inputs">%
-  <input type="number">
-  <span>%</span>
-</div>
-</div>
 
-<div>
-  <label for="">pips in risk (Stop loss)</label>
-<div class="inputs">
-  <img class="icons" src="icons/add-circle-outline.svg" alt="">
-  <input type="number" >
-  <span>pips</span>
-</div>
-</div>
-
-
-<button class="calculate-btn"> 
-  <img class="icons" src="icons/calculator-outline.svg" alt=""> Calculate
-</button>
-
-
-
-
-
-
-
-</div>
-
-</div>
 <!-- mainfeature end -->
 
 
@@ -186,7 +250,7 @@
 <span>Recommanded Lost Size</span>
 
 <div class="lots-size-rap">
-   <span class="lots-size">0.5</span> <span>Lots</span>
+   <span class="lots-size">0.00</span> <span>Lots</span>
 </div>
 
 </div>
@@ -202,7 +266,7 @@
   <img class="icons" src="icons/alert-circle-outline.svg" alt="">
   <div class="resuts">
     <p>Risk Amount (USD)</p>
-<span>$10</span>
+<span class="riskamount">$0.00</span>
   </div>
 
  </div>
@@ -211,7 +275,7 @@
   <img class="icons" src="icons/trending-up-outline.svg" alt="">
   <div class="resuts">
     <p>Value par pip(USD)</p>
-<span>$1</span>
+<span class="pips-par-value">$0</span>
   </div>
 
 </div>
@@ -220,8 +284,8 @@
   <img class="icons" src="icons/add-circle-inred.svg" alt="">
 
   <div class="resuts">
-    <p>Total loss at stop loss</p>
-<span>$10</span>
+    <p>Pips in risk</p>
+<span class="pips-in-risk">0.00</span>
   </div>
 
 </div>
