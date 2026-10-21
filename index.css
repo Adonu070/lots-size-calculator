@@ -211,6 +211,7 @@ width: 1rem;
   color: var(--text-color);
 border: 0;
   width: 100%;
+  
   display: flex;
   align-content: center;
 justify-content: space-between;
@@ -245,7 +246,7 @@ input{
   border: 0;
   outline: none;
   color: var(--text-color);
-height: auto;
+height: 100%;
 width: 100%;
 border-radius: 1rem;
 }
@@ -614,6 +615,11 @@ header{
 
 .inputs{
   width: auto;
+  height: 100%;
+}
+
+.btn{
+  height: 100%;
 }
 
 ul{
@@ -650,6 +656,7 @@ ul{
 
 
 .market-rap{
+  height: 100%;
   width: auto;
 }
 
