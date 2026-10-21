@@ -95,6 +95,10 @@ font-size: 0.8rem;
   
 }
 
+
+
+
+
 .right-text{
   display: flex;
   flex-direction: column;
@@ -119,13 +123,23 @@ align-self: flex-end;
 
 
 .fi{
-  border-radius: 50%;
-  margin-right: 0.2rem;
+ 
 }
+
+.flag{ 
+  border-radius: 40%;
+  margin-right: 0.2rem;
+  width: 1.5rem;
+}
+
+
+
 li{
   background-color: var(--bg-card);
   padding: 0.2rem;
  margin-bottom: 0.5rem;
+ display: flex;
+ 
 }
 
 .counts-image{
@@ -351,24 +365,25 @@ footer span{
   padding: 1rem;
 }
 
-.descrpt-head{
+/* .descrpt-head{
  display: flex;
  align-content: center;
  color: var(--smalltex-head-color);
  gap: 1rem;
-}
+} */
 
 .result-page{
  background-color: #1e331e;
  border: 1px solid #487548;
  border-radius: 0.5rem;
- 
+
 }
 
 
 .resut-and-description{
   display: flex;
   flex-direction: column;
+  width: 100%;
 gap: 1rem;
 
 }
@@ -407,13 +422,15 @@ gap: 1rem;
   cursor: pointer;
 }
 
-.nav-property{
+.nav-property,.topmeanu{
   display: none;
 }
-
-.topmeanu{
-  display: none;
+.Calculate,.Info{
+  color: var(--primary);
 }
+/* {
+  display: none;
+} */
 
 ul{
 position: fixed;
@@ -431,6 +448,10 @@ z-index: 1;
   
 }
 
+.greennav{
+color: var(--primary);
+}
+
 .disable-confirmation{
   display: none;
 }
@@ -444,12 +465,74 @@ z-index: 1;
   display: none;
 }
 
-/* .currency-piars{
- font-weight: 600; */
- /* margin-bottom: 2rem; */
- /* position: fixed;
- top: 0%; */
-/* } */
+/* news */
+.news-container{
+overflow: hidden;
+}
+
+/* .news{
+  position: relative;
+  white-space: nowrap;
+  animation: move 8s linear infinite;
+}
+
+@keyframes move{
+from{
+  transform: translateX(100%);
+}
+
+to{
+ transform: translateX(-100%);
+}
+} */
+
+.news-container{
+  overflow: hidden;
+}
+
+.news{
+  position: relative;
+  white-space: nowrap;
+  animation: move 10s linear infinite;
+}
+
+@keyframes move{
+  from{
+    transform: translateX(100%);
+  }
+to{
+  transform: translateX(-100%);
+}
+}
+
+
+
+
+/* news end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive desing */
 
@@ -596,12 +679,19 @@ nav{
   align-items: center;
   flex-direction: column;
   margin: 1rem;
+  cursor: pointer;
  
 }
 
 .nav-image{
   width: 1.5rem;
+  /* display: none; */
 }
+
+.calculator-page-two,.infor-page-two{
+  width: 1.5rem;
+  display: none;
+} 
 
 .heade-text{
   display: flex;
@@ -614,6 +704,17 @@ nav{
   align-self: flex-start;
 }
 
+.informationpage,.home-page{
+
+  display: none;
+}
+
+.risk-details{
+width: 100%;
+}
+.result-page{
+  width: 100%;
+}
 
 }
 
@@ -646,4 +747,9 @@ nav{
   
 }
 
+
+
+
+
 }
+

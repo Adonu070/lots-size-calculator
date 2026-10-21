@@ -1,0 +1,225 @@
+/* Global */
+
+:root {
+  /* colore */
+  --bg-main-color: #020B16;
+  --bg-card: #06182A;
+  --bg-input: #081A2D;
+  --primary: #00E69A;
+  --primary-hover: #00C982;
+  --border: #163B59;
+  --text-color: #ffffff;
+  --small-text-colore: #A7BED3;
+  --smalltex-head-color: #00D9F5;
+  --danger-color: #FF4D4D;
+
+
+  /* font size */
+
+  ---bigsize-2-5:2.5rem;
+  --meduimsize-2rem:2rem;
+  ---smallsize-1-5:1.5rem;
+  ---smallest-1:1rem;
+}
+body{
+  margin: 0px;
+  padding: 0rem;
+  box-sizing: 0rem;
+background-color: var(--bg-main-color);
+color: var(--text-color);
+font-family: 'poppins', sans-serif;
+}
+
+p{
+  margin: 0rem;
+}
+
+
+.container{
+  margin:  0 auto;
+  max-width: 1200px;
+}
+
+
+/* Global end */
+
+
+
+/* with 400-600px */
+@media(max-width: 37.5rem){
+/* 600/16 -37.5rem */
+html{
+font-size:80%;
+}
+.container{
+  width: 90%;
+}
+
+.mainpage{
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  align-items: center;
+  /* width:90% ; */
+}
+
+.market-selection{
+  width: 100%;
+  align-items: center;
+ 
+}
+
+
+
+
+.trade-image{
+  width: 100%;
+
+  
+}
+
+.topmeanu{
+  display: inline;
+}
+/* .risk-details{
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #487548;
+} */
+
+.result-proparty{
+border-bottom: 0;
+border: 1px solid #487548;
+background-color: #1e2e1e;
+padding: 1rem;
+border-radius: 1rem;
+display: flex;
+text-align: center;
+gap: 1rem;
+}
+
+.resuts{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-direction: column; */
+  /* align-items: center; */
+
+}
+header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 1rem ;
+}
+.mainfeature{
+  width: 100%;
+  
+}
+
+.inputs{
+  width: auto;
+}
+
+ul{
+ 
+  width: 90%;
+
+}
+
+
+
+.foooter-desc{
+  align-content: center;
+ 
+  display: flex;
+  flex-direction: column;
+}
+
+
+.footer-texts span{
+  font-size: 1rem;
+}
+
+.right-text{
+  display: none;
+}
+
+.calculate-btn{
+  display: flex;
+  /* align-self: center; */
+  
+  align-content: center;
+ 
+}
+
+
+.market-rap{
+  width: auto;
+}
+
+header{
+  width: auto;
+}
+/* footer{
+  display: flex;
+  flex-direction: column;
+} */
+
+nav{
+  display: flex;
+  justify-content:space-around;
+  position: fixed;
+  bottom: 0;
+
+ width: 100%;
+  background-color: var(--bg-main-color);
+  height: 3rem;
+  justify-self: center;
+  padding: 0rem 2rem 2rem 2rem;
+  border-top:  1px solid var(--border);
+}
+.nav-property{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+  cursor: pointer;
+ 
+}
+
+.calculator-page-two,.infor-page-two{
+  width: 1.5rem;
+  display: none;
+}
+
+.heade-text{
+  display: flex;
+  align-items:center;
+  font-size: 1.5rem;
+}
+
+
+.head-text-rap{
+  align-self: flex-start;
+}
+
+
+.description{
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.descrpt-head{
+ display: flex;
+ align-content: center;
+ color: var(--smalltex-head-color);
+ gap: 1rem;
+}
+
+.icons{
+  width: 1rem;
+}
+}

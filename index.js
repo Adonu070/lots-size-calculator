@@ -151,6 +151,7 @@ const displaypipsinrisk=document.querySelector('.pips-in-risk')
 // pips value
 let xauusdpaylot=100
 let majorpairpaylot=10
+let cryptopairpaylot=1
 // pips value end
 
 calculatebtn.addEventListener('click',()=>{
@@ -170,12 +171,22 @@ if (curency.innerHTML.includes('XAUUSD')&& balanceevalue&&riskvalue&&pipsvalue){
 
 else if (curency.innerHTML.includes('GBPUSD')|| curency.innerHTML.includes('EURUSD')|| curency.innerHTML.includes('AUDUSD')|| curency.innerHTML.includes('NZDUSD')) {
   
-
 let majorpairlots=risktotake/(pipsvalue*majorpairpaylot)
  lotsize.innerHTML=majorpairlots.toFixed(2);
  displayriskaount.innerHTML=`$${risktotake}`
+ displaypipvalue.innerHTML=`$${0.01}`
+ displaypipsinrisk.innerHTML=pipsvalue;
+
+}
+
+
+// crytpo
+else if (curency.innerHTML.includes('BTC')|| curency.innerHTML.includes('ETH')){
+let cryptolotstouse=risktotake/(pipsvalue*cryptopairpaylot)
+ lotsize.innerHTML=cryptolotstouse.toFixed(2);
+ displayriskaount.innerHTML=`$${risktotake}`
  displaypipvalue.innerHTML=`$${0.10}`
- displaypipsinrisk.innerHTML=pipsvalue
+ displaypipsinrisk.innerHTML=pipsvalue;
 }
 
 
@@ -184,3 +195,95 @@ let majorpairlots=risktotake/(pipsvalue*majorpairpaylot)
 
 
 //  display result end
+
+// nav
+let page=document.querySelectorAll('.page')
+function showpage(thepage){
+page.forEach(pages=>{pages.style.display='none'})
+
+
+document.getElementById(thepage).style.display='block'
+
+}
+
+const theinforpage=document.querySelector('.infor-page');
+
+ calculate.classList.add('Calculate');
+ theinforpage.addEventListener('.click',()=>{
+  theinforpage.style.display='none'
+ })
+hold()
+
+function hold (){
+  
+const calculatorpage=document.querySelector('.calculator-page');
+const calculatorpagetwo=document.querySelector('.calculator-page-two')
+
+const theinforpagetwo=document.querySelector('.infor-page-two');
+const calculate=document.getElementById('Calculate');
+const infor= document.getElementById('Infor')
+ calculatorpagetwo.style.display='block';
+   theinforpage.style.display='block';
+ 
+// nav.forEach(nav=>{
+function calculatepage(){
+  calculatorpagetwo.style.display='block';
+  calculatorpage.style.display='none';
+
+   theinforpage.style.display='block';
+   theinforpagetwo.style.display='none';
+
+    calculate.classList.add('Calculate');
+  infor.classList.remove('Info')
+
+
+}
+
+// function calculatepagecolored(){
+//   calculatorpagetwo.style.display='none';
+//   calculatorpage.style.display='block';
+
+//    theinforpage.style.display='block';
+//    theinforpagetwo.style.display='none'
+      
+// }
+
+function inforpage(){
+theinforpage.style.display='none';
+theinforpagetwo.style.display='block'
+calculatorpage.style.display='block';
+calculatorpagetwo.style.display='none';
+calculate.classList.remove('Calculate');
+    infor.classList.add('Info')
+}
+
+
+// function inforpagecolored(){
+// theinforpage.style.display='block';
+// theinforpagetwo.style.display='none';
+// }
+  // calculatorpage.addEventListener('Click',()=>{
+
+ 
+
+     
+  //     })
+
+// else if(calculatorcolored){
+//   //        inforcoloerd.style.display='block';
+//   // infornotcoloerd.style.display='none';
+
+//    calculatorcolored.style.display='none'
+//       calculatornotcolored.style.display='block';
+      
+//       nav.classList.add('greennav')
+// }
+
+
+
+ 
+
+// })
+}
+// nav end
+
