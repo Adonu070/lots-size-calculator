@@ -5,9 +5,12 @@ const curency=document.querySelector('.currency')
 const selectpiar=document.getElementById('select-pair')
 const bluring=document.querySelector('.blur')
 const pair=document.querySelector('.pairs')
-
+const pairsymbol=document.getElementById('pairsymbol');
+const liveprice=document.getElementById('liveprice')
 
  list.forEach(list=>{
+
+
 list.addEventListener('click',()=>{   
  
     // alert('bro')
@@ -15,9 +18,38 @@ list.addEventListener('click',()=>{
 bluring.style.display='none'
 
 
+
+
   })
  
 })
+
+
+// ,"base_code":"GBP","target_code":"USD","conversion_rate":1.3375}
+
+async function gatedata(thesymbol){
+try{
+
+  const respons= await fetch(`https://v6.exchangerate-api.com/v6/8ce863e5f792ed76106498b9/pair/${thesymbol}`)
+
+const data= await respons.json();
+liveprice.innerHTML=JSON.stringify(data.conversion_rate)
+// let pairchar=JSON.stringify(thesymbol);
+let removedpairchar=thesymbol.replaceAll("/","")
+pairsymbol.innerHTML=removedpairchar
+
+
+
+}catch (error){
+
+
+}
+
+}
+
+// window.gatedata=gatedata;
+
+
 
 
 const marketselection=document.querySelectorAll('.market-leection')
@@ -155,6 +187,9 @@ const displaypipsinrisk=document.querySelector('.pips-in-risk')
 let xauusdpaylot=100
 let majorpairpaylot=10
 let cryptopairpaylot=1
+let fistminorpairpipvalue= 0.0001
+let pairebdwithjpy=0.01
+let contractsize=100000
 // pips value end
 
 calculatebtn.addEventListener('click',()=>{
@@ -338,7 +373,5 @@ calculatorpage.addEventListener('click',()=>{
 // }
 
 
- const contractsize={
-  'AUDCAD':10000
- }
+
 
