@@ -109,9 +109,10 @@
 <div>
     <label for=" Currncy pair" class="pairs"></label>
 <div class="inputs">
-   <button type="button" class="btn" id="select-pair">
+   <button  type="button" class="btn input-text" id="select-pair">
 
-    <span class="currency"></span> <img class="btn-image" src="icons/chevron-down-outline (1).svg" alt="">
+    <span class="currency"></span>
+     <img class="btn-image" src="icons/chevron-down-outline (1).svg" alt="">
   
   </button>
 </div>
@@ -135,13 +136,17 @@
 <input type="number" name="" id="balance">
 <span>USD</span>
 </div>
+<div class="save-balance-rap">
+ <button class="save-balance"></button> 
+</div>
+
 </div>
 
 
 <div>
   <label for="">Risk %</label>
 <div class="inputs">%
-  <input type="number" id="Risk">
+  <input class="input-text" type="number" id="Risk">
   <span>%</span>
 </div>
 </div>
@@ -150,7 +155,7 @@
   <label for="">pips in risk (Stop loss)</label>
 <div class="inputs">
   <img class="icons" src="icons/add-circle-outline.svg" alt="">
-  <input type="number" id="pips">
+  <input class="input-text" type="number" id="pips">
   <span>pips</span>
 </div>
 </div>
@@ -204,12 +209,20 @@
 
  <li class="list" onclick="gatedata('AUD/JPY')" ><img class="flag"  src="logo & flag/AU.svg" alt=""><img class="flag" src="logo & flag/JP.svg" alt="">AUDJPY</li>
 
- <li class="list" onclick="gatedata('GBP/NSD')" ><img class="flag"  src="logo & flag/GB.svg" alt=""><img class="flag" src="logo & flag/NZ.svg" alt="">GBPNZD</li>
-
+ <li class="list" onclick="gatedata('GBP/NZD')" ><img class="flag"  src="logo & flag/GB.svg" alt=""><img class="flag" src="logo & flag/NZ.svg" alt="">GBPNZD</li>
+ <li class="list" onclick="gatedata('GBP/CHF')" ><img class="flag"  src="logo & flag/GB.svg" alt=""><img class="flag" src="logo & flag/CH.svg" alt="">GBPCHF</li>
+  <li class="list" onclick="gatedata('NZD/JPY')" ><img class="flag"  src="logo & flag/NZ.svg" alt=""><img class="flag" src="logo & flag/JP.svg" alt="">NZDJPY</li>
  <li class="list" onclick="gatedata('AUD/CAD')" ><img class="flag"  src="logo & flag/AU.svg" alt=""><img class="flag" src="logo & flag/CA.svg" alt="">AUDCAD</li>
-
+ <li class="list" onclick="gatedata('GBP/JPY')" ><img class="flag"  src="logo & flag/GB.svg" alt=""><img class="flag" src="logo & flag/JP.svg" alt="">GBPJPY</li>
  <li class="list" onclick="gatedata('AUD/CHF')" ><img class="flag"  src="logo & flag/AU.svg" alt=""><img class="flag" src="logo & flag/CH.svg" alt="">AUDCHF</li>
  <li class="list" onclick="gatedata('NZD/CAD')" ><img class="flag"  src="logo & flag/NZ.svg" alt=""><img class="flag" src="logo & flag/CA.svg" alt="">NZDCAD</li>
+ <li class="list" onclick="gatedata('EUR/JPY')" ><img class="flag"  src="logo & flag/EU.svg" alt=""><img class="flag" src="logo & flag/JP.svg" alt="">EURJPY</li>
+ <li class="list" onclick="gatedata('NZD/CHF')" ><img class="flag"  src="logo & flag/NZ.svg" alt=""><img class="flag" src="logo & flag/CH.svg" alt="">NZDCHF</li>
+ <li class="list" onclick="gatedata('EUR/CAD')" ><img class="flag"  src="logo & flag/EU.svg" alt=""><img class="flag" src="logo & flag/CA.svg" alt="">EURCAD</li>
+ <li class="list" onclick="gatedata('CHF/JPY')" ><img class="flag"  src="logo & flag/CH.svg" alt=""><img class="flag" src="logo & flag/JP.svg" alt="">CHFJPY</li>
+  <li class="list" onclick="gatedata('EUR/CHF')" ><img class="flag"  src="logo & flag/EU.svg" alt=""><img class="flag" src="logo & flag/CH.svg" alt="">EURCHF</li>
+   <li class="list" onclick="gatedata('EUR/NZD')" ><img class="flag"  src="logo & flag/EU.svg" alt=""><img class="flag" src="logo & flag/NZ.svg" alt="">EURNZD</li>
+  <li class="list" onclick="gatedata('EUR/NZD')" ><img class="flag"  src="logo & flag/CA.svg" alt=""><img class="flag" src="logo & flag/CH.svg" alt="">CADCHF</li>
 <!-- minor pairs end -->
 </ul>
 
@@ -245,8 +258,8 @@
 <!-- crypto -->
 
 <ul class="ul-page" id="crypto">
-  <li class="list"><img class="icons" src="icons/CRYPTO.svg" alt="">BTC</li>
-  <li class="list"><img class="icons" src="icons/eth-svgrepo-com.svg" alt="">ETH</li>
+  <li class="list"><img class="icons" src="icons/CRYPTO.svg" alt="">BTCUSD</li>
+  <li class="list"><img class="icons" src="icons/eth-svgrepo-com.svg" alt="">ETHUSD</li>
 </ul>
 <!-- crypto end-->
 
@@ -329,7 +342,9 @@
 </div>
  </div>
 <!-- display result end -->
-
+<div class="checkit">
+  CADJPY
+</div>
 <!-- description -->
 
 <div class="description home-page">

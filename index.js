@@ -7,6 +7,16 @@ const bluring=document.querySelector('.blur')
 const pair=document.querySelector('.pairs')
 const pairsymbol=document.getElementById('pairsymbol');
 const liveprice=document.getElementById('liveprice')
+let balance=document.getElementById('balance');
+
+
+
+
+
+
+
+
+
 
  list.forEach(list=>{
 
@@ -33,11 +43,12 @@ try{
   const respons= await fetch(`https://v6.exchangerate-api.com/v6/8ce863e5f792ed76106498b9/pair/${thesymbol}`)
 
 const data= await respons.json();
-liveprice.innerHTML=JSON.stringify(data.conversion_rate)
+let result=JSON.stringify(data.conversion_rate)
+liveprice.innerHTML=result
+
 // let pairchar=JSON.stringify(thesymbol);
 let removedpairchar=thesymbol.replaceAll("/","")
 pairsymbol.innerHTML=removedpairchar
-
 
 
 }catch (error){
@@ -172,7 +183,7 @@ bluring.style.display='block'
 
 
 //  display result
-let balance=document.getElementById('balance');
+
 if (balance){
 
 
@@ -187,12 +198,14 @@ const displaypipsinrisk=document.querySelector('.pips-in-risk')
 let xauusdpaylot=100
 let majorpairpaylot=10
 let cryptopairpaylot=1
-let fistminorpairpipvalue= 0.0001
-let pairebdwithjpy=0.01
+let pairwithoutjpy= 0.0001
+let pairdwithjpy=0.01
 let contractsize=100000
+
 // pips value end
 
 calculatebtn.addEventListener('click',()=>{
+
   // get % of the balance
  let balanceevalue=Number(balance.value) 
  let riskvalue=Number(risk.value)
@@ -201,16 +214,79 @@ calculatebtn.addEventListener('click',()=>{
 //  get % of the balance end
 if (curency.innerHTML.includes('XAUUSD')&& balanceevalue&&riskvalue&&pipsvalue){
  let xauusdlotstouse=risktotake/(pipsvalue*xauusdpaylot)
- lotsize.innerHTML=xauusdlotstouse.toFixed(2);
+ lotsize.innerHTML=xauusdlotstouse.toFixed(3);
  displayriskaount.innerHTML=`$${risktotake}`
  displaypipvalue.innerHTML=`$${1}`
  displaypipsinrisk.innerHTML=pipsvalue
 }
 
-else if (curency.innerHTML.includes('GBPUSD')|| curency.innerHTML.includes('EURUSD')|| curency.innerHTML.includes('AUDUSD')|| curency.innerHTML.includes('NZDUSD')) {
+
+// get html currency showing
+const allpairs=curency.textContent.trim();
+const quotecurrency=allpairs.slice(-3)
+console.log(quotecurrency)
+// get html currency showing end
+
+// USD/CAD GROUP
+ if (quotecurrency==='CAD'&&balanceevalue&&riskvalue&&pipsvalue){
+
+ fetch(`https://v6.exchangerate-api.com/v6/8ce863e5f792ed76106498b9/pair/USD/CAD`)
+.then((threspons)=>threspons.json())
+.then( therespons=>localStorage.setItem('usdcadprice',therespons.conversion_rate))
+  let thecontracsize=contractsize*pairwithoutjpy
+ 
+  let convertusdcadprice=Number(localStorage.getItem('usdcadprice')) //usdcad price
+  let convertousdamount=thecontracsize/convertusdcadprice; //pips in USD is correct
+  let thelotsizetouse=risktotake/(pipsvalue*convertousdamount) 
+  lotsize.innerHTML=thelotsizetouse.toFixed(3)
+}
+
+
+// USD/CHF GROUP
+else if (quotecurrency==='CHF'&&balanceevalue&&riskvalue&&pipsvalue){
+
+ fetch(`https://v6.exchangerate-api.com/v6/8ce863e5f792ed76106498b9/pair/USD/CHF`)
+.then((threspons)=>threspons.json())
+.then( therespons=>localStorage.setItem('usdchfprice',therespons.conversion_rate))
+  let thecontracsize=contractsize*pairwithoutjpy
+ console.log(thecontracsize)
+  let convertusdchfprice=Number(localStorage.getItem('usdchfprice')) //usdcad price
+  let convertousdamount=thecontracsize/convertusdchfprice; //pips in USD is correct
+  let thelotsizetouse=risktotake/(pipsvalue*convertousdamount) 
+  lotsize.innerHTML=thelotsizetouse.toFixed(3)
+}
+
+
+
+// USD/JPY GROUP
+else if (quotecurrency==='JPY'&&balanceevalue&&riskvalue&&pipsvalue){
+
+
+
+  
+ fetch(`https://v6.exchangerate-api.com/v6/8ce863e5f792ed76106498b9/pair/USD/JPY`)
+.then((threspons)=>threspons.json())
+.then( therespons=>localStorage.setItem('usdjpyfprice',therespons.conversion_rate))
+console.log()
+  let thecontracsize=contractsize*pairdwithjpy
+ console.log(thecontracsize)
+  let convertusdjpyprice=Number(localStorage.getItem('usdjpyfprice')) //usdcad price
+  let convertousdamount=thecontracsize/convertusdjpyprice; //pips in USD is correct
+  let thelotsizetouse=risktotake/(pipsvalue*convertousdamount) 
+  lotsize.innerHTML=thelotsizetouse.toFixed(3)
+
+}
+
+
+
+
+
+//major pairs
+
+else if (quotecurrency==='USD'&&balanceevalue&&riskvalue&&pipsvalue) {
   
 let majorpairlots=risktotake/(pipsvalue*majorpairpaylot)
- lotsize.innerHTML=majorpairlots.toFixed(2);
+ lotsize.innerHTML=majorpairlots.toFixed(3);
  displayriskaount.innerHTML=`$${risktotake}`
  displaypipvalue.innerHTML=`$${0.01}`
  displaypipsinrisk.innerHTML=pipsvalue;
@@ -219,22 +295,55 @@ let majorpairlots=risktotake/(pipsvalue*majorpairpaylot)
 
 
 // crytpo
-else if (curency.innerHTML.includes('BTC')|| curency.innerHTML.includes('ETH')){
+
+
+ if (allpairs.slice(0,3)==='BTC'||allpairs.slice(0,3)==='ETH'&&balanceevalue&&riskvalue&&pipsvalue){
 let cryptolotstouse=risktotake/(pipsvalue*cryptopairpaylot)
- lotsize.innerHTML=cryptolotstouse.toFixed(2);
+ lotsize.innerHTML=cryptolotstouse.toFixed(3);
  displayriskaount.innerHTML=`$${risktotake}`
  displaypipvalue.innerHTML=`$${0.10}`
  displaypipsinrisk.innerHTML=pipsvalue;
 }
 
-
+else{
+ lotsize.innerHTML='0.000'
+}
 
 })
 
+
+
 }
-//  display result end
+
+const savebalance=document.querySelector('.save-balance');
+const savebalancerap=document.querySelector('.save-balance-rap');
+const inputext=document.querySelectorAll('.input-text')
+const savetext='Save'
+ savebalance.innerHTML=savetext
+
+balance.addEventListener('click',()=>{
+savebalancerap.style.display='block';
+ savebalance.innerHTML=savetext
+})
+
+savebalance.addEventListener('click',()=>{
+
+ localStorage.setItem('savedbalance',balance.value)
+        savebalance.innerHTML='Saved';
+
+})
+balance.value=localStorage.getItem('savedbalance')
+
+inputext.forEach(inputext=>{
+  inputext.addEventListener('click',()=>{
+   savebalancerap.style.display='none'
+})
+})
 
 
+// if(savebalance.innerHTML==='Saved'){
+
+// }
 
 
 

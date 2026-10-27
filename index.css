@@ -466,6 +466,30 @@ color: var(--primary);
   display: none;
 }
 
+/* save balance */
+
+.save-balance{
+  border: 0;
+  background-color: var(--primary);
+  color: var(--bg-main-color);
+  border-radius: 1rem;
+  display: flex;
+  justify-self: flex-end;
+  margin-right: 1rem;
+  margin-top: 0.1rem;
+  
+}
+
+.save-balance:active{
+  background-color: var(--primary-hover);
+}
+
+.save-balance-rap{
+  display: none;
+}
+
+/* save balance end */
+
 /* news */
 .news-container{
 overflow: hidden;
@@ -753,9 +777,6 @@ width: 100%;
   
   
 }
-
-
-
 
 
 }
