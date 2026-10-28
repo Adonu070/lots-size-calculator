@@ -59,8 +59,9 @@
 
 
 <!--  market selection-->
-  <div>
-    <span id="pairsymbol">gbpusd:</span>
+  <div class="pairselcted">
+    <!-- <span class="currencyselcted">no pair</span>: -->
+    <span id="pairsymbol">:</span>
     <span id="liveprice">49494</span>
   </div>
 
@@ -131,7 +132,7 @@
 
 
 <div>
-  <label for=""> Account balance (USD)</label>
+  <label for=""> Risk Calculation Balance (USD)</label>
 <div class="inputs">$
 <input type="number" name="" id="balance">
 <span>USD</span>
@@ -178,11 +179,12 @@
 
 
 
-<div class="blur">
+<div class="blur"> 
+    
 <ul  class="ul-page" id="forex">
   <!-- major pairs -->
    <!-- <li class="currency-piars">Currency piars</li> -->
-   
+
    
 <li class="list" onclick="gatedata('GBP/USD')" ><img class="flag"  src="logo & flag/GB.svg" alt=""><img class="flag"  src="logo & flag/US.svg" alt="">GBPUSD</li>
 
@@ -214,15 +216,19 @@
   <li class="list" onclick="gatedata('NZD/JPY')" ><img class="flag"  src="logo & flag/NZ.svg" alt=""><img class="flag" src="logo & flag/JP.svg" alt="">NZDJPY</li>
  <li class="list" onclick="gatedata('AUD/CAD')" ><img class="flag"  src="logo & flag/AU.svg" alt=""><img class="flag" src="logo & flag/CA.svg" alt="">AUDCAD</li>
  <li class="list" onclick="gatedata('GBP/JPY')" ><img class="flag"  src="logo & flag/GB.svg" alt=""><img class="flag" src="logo & flag/JP.svg" alt="">GBPJPY</li>
+  <li class="list" onclick="gatedata('EUR/AUD')" ><img class="flag"  src="logo & flag/EU.svg" alt=""><img class="flag" src="logo & flag/AU.svg" alt="">EURAUD</li>
+<li class="list" onclick="gatedata('EUR/GBP')" ><img class="flag"  src="logo & flag/EU.svg" alt=""><img class="flag" src="logo & flag/GB.svg" alt="">EURGBP</li>
  <li class="list" onclick="gatedata('AUD/CHF')" ><img class="flag"  src="logo & flag/AU.svg" alt=""><img class="flag" src="logo & flag/CH.svg" alt="">AUDCHF</li>
  <li class="list" onclick="gatedata('NZD/CAD')" ><img class="flag"  src="logo & flag/NZ.svg" alt=""><img class="flag" src="logo & flag/CA.svg" alt="">NZDCAD</li>
  <li class="list" onclick="gatedata('EUR/JPY')" ><img class="flag"  src="logo & flag/EU.svg" alt=""><img class="flag" src="logo & flag/JP.svg" alt="">EURJPY</li>
  <li class="list" onclick="gatedata('NZD/CHF')" ><img class="flag"  src="logo & flag/NZ.svg" alt=""><img class="flag" src="logo & flag/CH.svg" alt="">NZDCHF</li>
  <li class="list" onclick="gatedata('EUR/CAD')" ><img class="flag"  src="logo & flag/EU.svg" alt=""><img class="flag" src="logo & flag/CA.svg" alt="">EURCAD</li>
+
  <li class="list" onclick="gatedata('CHF/JPY')" ><img class="flag"  src="logo & flag/CH.svg" alt=""><img class="flag" src="logo & flag/JP.svg" alt="">CHFJPY</li>
   <li class="list" onclick="gatedata('EUR/CHF')" ><img class="flag"  src="logo & flag/EU.svg" alt=""><img class="flag" src="logo & flag/CH.svg" alt="">EURCHF</li>
    <li class="list" onclick="gatedata('EUR/NZD')" ><img class="flag"  src="logo & flag/EU.svg" alt=""><img class="flag" src="logo & flag/NZ.svg" alt="">EURNZD</li>
   <li class="list" onclick="gatedata('EUR/NZD')" ><img class="flag"  src="logo & flag/CA.svg" alt=""><img class="flag" src="logo & flag/CH.svg" alt="">CADCHF</li>
+
 <!-- minor pairs end -->
 </ul>
 
@@ -466,7 +472,7 @@
 <span class="nav-text calculator-page"  onclick="showpage('calculatorpage')" id="Calculate">Calculator</span>
   </div>
 
-
+<!-- <input type="search" name="" id="searchinput"><button class="search">search</button> -->
 
 <div class="nav-property">
 

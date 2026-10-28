@@ -17,18 +17,11 @@ let balance=document.getElementById('balance');
 
 
 
-
  list.forEach(list=>{
-
-
 list.addEventListener('click',()=>{   
- 
-    // alert('bro')
   curency.innerHTML=list.innerHTML
+//  document.querySelector('.currencyselcted').innerHTML=list.innerHTML
 bluring.style.display='none'
-
-
-
 
   })
  
@@ -48,7 +41,7 @@ liveprice.innerHTML=result
 
 // let pairchar=JSON.stringify(thesymbol);
 let removedpairchar=thesymbol.replaceAll("/","")
-pairsymbol.innerHTML=removedpairchar
+ pairsymbol.innerHTML=removedpairchar
 
 
 }catch (error){
@@ -277,7 +270,75 @@ console.log()
 
 }
 
+// AUDUSD GROUP
 
+else if (quotecurrency==='AUD'&&balanceevalue&&riskvalue&&pipsvalue){
+
+
+
+  
+ fetch(`https://v6.exchangerate-api.com/v6/8ce863e5f792ed76106498b9/pair/AUD/USD`)
+.then((threspons)=>threspons.json())
+.then( therespons=>localStorage.setItem('audusdprice',therespons.conversion_rate))
+console.log()
+  let thecontracsize=contractsize*pairwithoutjpy
+ console.log(thecontracsize)
+  let convertaudusdprice=Number(localStorage.getItem('audusdprice')) //audusd price
+  let convertousdamount=thecontracsize*convertaudusdprice; //pips in USD is correct
+  let thelotsizetouse=risktotake/(pipsvalue*convertousdamount) 
+  lotsize.innerHTML=thelotsizetouse.toFixed(3)
+
+}
+
+
+// GBPUSD GROUP
+else if (quotecurrency==='GBP'&&balanceevalue&&riskvalue&&pipsvalue){
+ fetch(`https://v6.exchangerate-api.com/v6/8ce863e5f792ed76106498b9/pair/GBP/USD`)
+.then((threspons)=>threspons.json())
+.then( therespons=>localStorage.setItem('gbpusdprice',therespons.conversion_rate))
+console.log()
+  let thecontracsize=contractsize*pairwithoutjpy
+ console.log(thecontracsize)
+  let convertgbpusdprice=Number(localStorage.getItem('gbpusdprice')) //gbpusd price
+  let convertousdamount=thecontracsize*convertgbpusdprice; //pips in USD is correct
+  let thelotsizetouse=risktotake/(pipsvalue*convertousdamount) 
+  lotsize.innerHTML=thelotsizetouse.toFixed(3)
+
+}
+
+
+// EURUSD GROUP
+
+
+else if (quotecurrency==='EUR'&&balanceevalue&&riskvalue&&pipsvalue){
+ fetch(`https://v6.exchangerate-api.com/v6/8ce863e5f792ed76106498b9/pair/EUR/USD`)
+.then((threspons)=>threspons.json())
+.then( therespons=>localStorage.setItem('eurusdprice',therespons.conversion_rate))
+console.log()
+  let thecontracsize=contractsize*pairwithoutjpy
+ console.log(thecontracsize)
+  let converteurusdprice=Number(localStorage.getItem('eurusdprice')) //eurusd price
+  let convertousdamount=thecontracsize*converteurusdprice; //pips in USD is correct
+  let thelotsizetouse=risktotake/(pipsvalue*convertousdamount) 
+  lotsize.innerHTML=thelotsizetouse.toFixed(3)
+
+}
+
+// NZDUSD GROUP
+
+else if (quotecurrency==='NZD'&&balanceevalue&&riskvalue&&pipsvalue){
+ fetch(`https://v6.exchangerate-api.com/v6/8ce863e5f792ed76106498b9/pair/NZD/USD`)
+.then((threspons)=>threspons.json())
+.then( therespons=>localStorage.setItem('nzdusdprice',therespons.conversion_rate))
+console.log()
+  let thecontracsize=contractsize*pairwithoutjpy
+ console.log(thecontracsize)
+  let convertnzdusdprice=Number(localStorage.getItem('nzdusdprice')) //nzdusd price
+  let convertousdamount=thecontracsize*convertnzdusdprice; //pips in USD is correct
+  let thelotsizetouse=risktotake/(pipsvalue*convertousdamount) 
+  lotsize.innerHTML=thelotsizetouse.toFixed(3)
+
+}
 
 
 
@@ -297,7 +358,7 @@ let majorpairlots=risktotake/(pipsvalue*majorpairpaylot)
 // crytpo
 
 
- if (allpairs.slice(0,3)==='BTC'||allpairs.slice(0,3)==='ETH'&&balanceevalue&&riskvalue&&pipsvalue){
+else if (curency.textContent==='BTCUSD'||curency.textContent==='ETHUSD'&&balanceevalue &&riskvalue && pipsvalue){
 let cryptolotstouse=risktotake/(pipsvalue*cryptopairpaylot)
  lotsize.innerHTML=cryptolotstouse.toFixed(3);
  displayriskaount.innerHTML=`$${risktotake}`
@@ -410,6 +471,34 @@ calculatorpage.addEventListener('click',()=>{
 }
 
  // nav end
+
+
+// serch feature
+// const search=document.querySelector('.search')
+// const searchinput=document.getElementById('searchinput')
+// search.addEventListener('click',()=>{
+//   list.includes(searchinput.value).innerHTML='bbb'
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // function hold (){

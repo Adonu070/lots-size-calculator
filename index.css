@@ -465,6 +465,11 @@ color: var(--primary);
   backdrop-filter: blur(5px);
   display: none;
 }
+.pairselcted{
+  background-color: var(--bg-input);
+  padding: 1rem;
+}
+
 
 /* save balance */
 
@@ -494,6 +499,8 @@ color: var(--primary);
 .news-container{
 overflow: hidden;
 }
+
+
 
 /* .news{
   position: relative;
