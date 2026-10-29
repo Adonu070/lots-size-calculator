@@ -70,8 +70,9 @@ let indicesecolor=document.querySelector('.inds');
 const thefx=document.querySelector('.thefx')
 const thedity=document.querySelector('.thedity')
 const thepto=document.querySelector('.thepto')
-
-
+const allplatform=document.querySelector('.allplatform')
+const brokers=document.querySelector('.brokers')
+const propfirm=document.querySelector('.prop');
 // auto
 pair.innerHTML='Currency pair'
 thefx.innerHTML='fx'
@@ -106,7 +107,9 @@ thefx.innerHTML='fx'
 
 
 else if(marketselection.innerHTML.includes('Indices')){
-  // indices.style.display='block';
+allplatform.style.display='block'
+brokers.style.display='block';
+propfirm.style.display='none'
   indicesecolor.classList.add('green')
   cryptobrcolor.classList.remove('green')
     fxbgcolor.classList.remove('green')
@@ -358,7 +361,7 @@ let majorpairlots=risktotake/(pipsvalue*majorpairpaylot)
 // crytpo
 
 
-else if (curency.textContent==='BTCUSD'||curency.textContent==='ETHUSD'&&balanceevalue &&riskvalue && pipsvalue){
+else if (curency.innerHTML.includes('BTC')||curency.innerHTML.includes('ETH')&&balanceevalue &&riskvalue && pipsvalue){
 let cryptolotstouse=risktotake/(pipsvalue*cryptopairpaylot)
  lotsize.innerHTML=cryptolotstouse.toFixed(3);
  displayriskaount.innerHTML=`$${risktotake}`
@@ -469,6 +472,46 @@ calculatorpage.addEventListener('click',()=>{
 
 
 }
+
+// platforms
+
+// brokers
+const  platform=document.querySelectorAll('.platform')
+
+
+platform.forEach(platform=>{
+  platform.addEventListener('click',()=>{
+    if(platform.innerHTML==='Brokers'){
+brokers.style.display='block';
+propfirm.style.display='none'
+    }
+else if (platform.innerHTML==='Propfirms'){
+brokers.style.display='none';
+propfirm.style.display='block'
+}
+
+
+
+  })
+})
+
+
+
+
+//brokers end
+
+// platforms end
+
+
+
+
+
+
+
+
+
+
+
 
  // nav end
 

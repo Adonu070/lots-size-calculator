@@ -120,7 +120,11 @@ align-self: flex-end;
 .icons{
   width: 1rem;
 }
-
+.brokerandprop-image{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
 
 .fi{
  
@@ -139,6 +143,8 @@ li{
   padding: 0.2rem;
  margin-bottom: 0.5rem;
  display: flex;
+ align-items: center;
+ gap: 0.3rem;
  
 }
 
@@ -176,7 +182,7 @@ width: 60rem;
 
 
 
-ul{
+ul,.allplatform{
   background-color: var(--bg-input);
   width: 20rem;
   display: flex;
@@ -191,6 +197,18 @@ ul{
 
   left: 50%;
   transform: translate(50%,-50%);
+}
+.ul-platforms{
+  border: 0;
+  left: 50%;
+  
+  transform: translate(-50%);
+
+}
+
+.allplatform{
+  display: none;
+max-height: 30rem;
 }
 
 li{
@@ -434,11 +452,11 @@ gap: 1rem;
 } */
 
 ul{
-position: fixed;
+/* position: fixed;
 left: 50%;
 transform: translate(-50%);
-top: 10%;
-z-index: 1;
+top: 10%; */
+/* z-index: 1; */
 }
 
 .green{
@@ -455,6 +473,7 @@ color: var(--primary);
 
 .disable-confirmation{
   display: none;
+
 }
 
 .blur{
@@ -465,6 +484,8 @@ color: var(--primary);
   backdrop-filter: blur(5px);
   display: none;
 }
+
+
 .pairselcted{
   background-color: var(--bg-input);
   padding: 1rem;
@@ -499,6 +520,28 @@ color: var(--primary);
 .news-container{
 overflow: hidden;
 }
+
+/* platforms */
+
+.choose-platform{
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  border: 2px solid var(--border);
+  padding: 0.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+ 
+  
+}
+
+.platform{
+  cursor: pointer;
+}
+
+
+/* platforms end */
+
 
 
 
@@ -659,7 +702,13 @@ ul{
 
 }
 
+.allplatform{
+  position: fixed;
 
+  left: 50%;
+  transform: translate(-50%);
+min-height: 15rem;
+}
 
 .foooter-desc{
   align-content: center;
